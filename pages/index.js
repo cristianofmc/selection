@@ -1,5 +1,5 @@
 function Home(){
-    return <h2>Selections 2</h2>
+    return <h2>Selections</h2>
 }
 
-export default Home
+export default Homeristi
