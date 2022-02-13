@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-function Home(){
+function About(){
     return <div>
         <h1>Selections - teste</h1>
-        <Link href="/about"><a>Sobre</a></Link>
+        <Link href="/"><a>Home</a></Link>
     </div>
 }
 
-export default Home
+export default About
