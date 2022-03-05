@@ -1,14 +1,6 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": ["next", "prettier"],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+    "extends": "next/core-web-vitals",
+    "rules": {
+        "react/no-unescaped-entities": "off"
     }
 }
