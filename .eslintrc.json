@@ -3,6 +3,7 @@
         "browser": true,
         "es2021": true
     },
+    "extends": ["next", "prettier"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
