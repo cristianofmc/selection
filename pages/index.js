@@ -1,10 +1,9 @@
 import Link from 'next/link';
+import Hero from '../components/Hero';
 
 function Home(){
-    return <div className='bg-slate-800'>
-        <h1>Selections - teste</h1>
-        <Link href="/about"><a>Sobre</a></Link>
-        <h1 className="text-orange-600 text-3xl">HEllo</h1>
+    return <div >
+        <Hero></Hero>
     </div>
 }
 
