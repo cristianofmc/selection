@@ -1,29 +1,24 @@
 import Link from 'next/link';
-import { useEffect } from 'react/cjs/react.production.min';
 import Hero from '../components/Hero';
-import githubApi from '../services/github';
+import { getUserDetails} from '../lib/github-api';
 
 function Home(props){
     return(
-        <div >
+        <div>
             <Hero></Hero>
+            <div>{props.userDetails.login}</div>
         </div>
     )
 }
 
 export async function getStaticProps(){
-    try{
-        const response = await githubApi();
-        const data = JSON.stringify(response.data);
-        
-        return {
-            props: {
-                data: data
-            }
-        }
+    const userDetails = await getUserDetails()
 
-    } catch(error){
-        console.log(error)
+    return {
+        props: {
+            userDetails
+        },
+        revalidate: 1
     }
 }
 
