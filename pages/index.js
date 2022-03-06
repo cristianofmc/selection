@@ -6,7 +6,7 @@ import { getUserDetails, getReposByTopics} from '../lib/github-api';
 function Home(props){
     return(
         <div>
-            <Head><title>Selections</title></Head>
+            <Head><title>Cristiano Felipe</title></Head>
             <Hero></Hero>
             <div>
                 {props.repos.map((data) => {
