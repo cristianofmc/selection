@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import Hero from '../components/Hero';
 import { getUserDetails, getReposByTopics} from '../lib/github-api';
 
 function Home(props){
     return(
         <div>
+            <Head><title>Selections</title></Head>
             <Hero></Hero>
             <div>
                 {props.repos.map((data) => {
