@@ -19,8 +19,8 @@ function Home(props){
 
 export async function getStaticProps(){
     const userDetails = await getUserDetails()
-    const reposDetails = await getReposByTopics()
-
+    const reposDetails = await getReposByTopics([])
+    
     return {
         props: {
             user:userDetails,
