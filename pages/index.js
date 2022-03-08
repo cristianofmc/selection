@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import Hero from '../components/Hero';
+import Projects from '../components/Projects';
 import { getUserDetails, getReposByTopics} from '../lib/github-api';
 
 function Home(props){
@@ -8,11 +9,10 @@ function Home(props){
         <div>
             <Head><title>Cristiano Felipe</title></Head>
             <Hero></Hero>
-            <div>
-                {props.repos.map((data) => {
-                    return <p className='text-center'>{data.name}</p>
-                })}
-            </div>
+            <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
+                <Projects>{props.repos}</Projects>
+            </section>
+
         </div>
     )
 }
