@@ -1,10 +1,10 @@
 const Projects = (props) => {
     return(
         <div id="projects" className="pt-3">
-            <ul className="mx-4 grid sm:grid-cols-2 md:grid-cols-4  gap-y-10 gap-x-6">
+            <ul key="1" className="mx-4 grid sm:grid-cols-2 md:grid-cols-4  gap-y-10 gap-x-6">
                 {
                     props.children.map((data) => {
-                        return  <li className="mx-2 rounded-lg border border-zinc-500">
+                        return  <li key={data.id} className="mx-2 rounded-lg border border-zinc-500">
                                     <div className="overflow-hidden ">
                                         <img className="relative w-full h-40 object-cover rounded-t-md" src="https://tm.ibxk.com.br/2021/03/08/08105041400097.jpg?ims=1200x675"></img>
                                     </div>
