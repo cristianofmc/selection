@@ -1,5 +1,6 @@
 
 import CoverRender  from './CoverRender';
+import Tag from './Tag';
 
 const Projects = (props) => {
 
@@ -21,14 +22,8 @@ const Projects = (props) => {
                                 <h1 className="font-bold">{data.name}</h1>
                                 <p>{data.description}</p>
                             </div>
-                            <div className="px-4 pt-3">
-                                {data.topics.map((tag) => (
-                                    <div className="px-2.5 pt-1.5 pb-3.5" key={`${data.id}_${tag}`}>
-                                        <a className="border border-zinc-500 inline-flex items-center h-6 rounded-full text-sm whitespace-nowrap px-2 mr-1.5 mt-1.5" href="/">{tag}</a>
-                                    </div>
-                                ))}
-                            </div>
-
+                            
+                            <Tag>{data.topics}</Tag>
                         </li>
                     })
                 }
