@@ -15,9 +15,18 @@ function About(props){
                 <MenuItem href="contact">Contact</MenuItem>
             </div>
             <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
-                <div id="about" className="pt-3">
-                    <img className="rounded-full" src={props.user.avatar_url}></img>
-                    <p>{props.user.bio}</p></div>
+                <div className='grid justify-items-center pt-3'>
+                    <div id="about" className="flex mx-4 space-x-4">
+                        <img className="w-28 h-28 rounded-full mr-2" src={props.user.avatar_url}></img>
+                        <div className="pt-2 max-w-md">
+                            {props.user.bio}
+                            <div className="mt-3">
+                                <a href={`${process.env.linkedin_url}`}className="mr-4 text-sky-500 hover:text-blue-600">linkedin</a>
+                                <a href={`${props.user.html_url}`} className="mr-4 text-sky-500 hover:text-blue-600">github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     )
@@ -25,7 +34,6 @@ function About(props){
 
 export async function getStaticProps(){
     const userDetails = await getUserDetails()
-     console.log(userDetails)
     return {
         props: {
             user:userDetails
