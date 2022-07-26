@@ -21,8 +21,8 @@ function About(props){
                         <div className="pt-2 max-w-md">
                             {props.user.bio}
                             <div className="mt-3">
-                                <a href={`${process.env.linkedin_url}`}className="mr-4 text-sky-500 hover:text-blue-600">linkedin</a>
-                                <a href={`${props.user.html_url}`} className="mr-4 text-sky-500 hover:text-blue-600">github</a>
+                                <a href={`${process.env.linkedin_url}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">linkedin</a>
+                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">github</a>
                             </div>
                         </div>
                     </div>
