@@ -1,8 +1,14 @@
 
+import { useState } from 'react';
 import CoverRender  from './CoverRender';
+import Modal from './Modal';
 import Tag from './Tag';
 
 const Projects = (props) => {
+
+    const [modalOn, setModalOn] = useState(false);
+
+    const clicked = () => {setModalOn(true)}
 
     return (
         <div id="projects" className="pt-3">
@@ -10,7 +16,7 @@ const Projects = (props) => {
                 {
                     props.children.map((data, index) => {
                         return <li key={data.id} className="mx-2 rounded-lg border border-zinc-500">
-                            <div className="overflow-hidden">
+                            <div className="overflow-hidden cursor-pointer" onClick={clicked}>
                                 <CoverRender>{data}</CoverRender>
                             </div>
 
@@ -24,6 +30,7 @@ const Projects = (props) => {
                     })
                 }
             </ul>
+            {modalOn && < Modal setModalOn={setModalOn} />}
         </div>
     );
 };
