@@ -1,10 +1,16 @@
-const Modal = () => {
+const Modal = ({visible, onClose}) => {
+
+    if(!visible) return null;
+
+    const handleOnClose = (e) => {
+        if (e.target.id === 'projectModal') onClose();
+    };
+
     return(
-        <div className="bg-zinc-200 opacity-80 fixed inset-0 z-50">
-            <div className="flex h-screen justify-center items-center"> 
-                <div className="flex-col justify-center bg-white py-12 border-1 px-24 rounded-xl opacity-100">
-                    Modal test
-                </div>
+        <div id='projectModal' onClick={handleOnClose} className="bg-zinc-200 backdrop-blur-sm bg-opacity-80 fixed inset-0 z-50 flex justify-center items-center">
+            <div className="bg-white p-5 rounded-lg ">
+                <p>Modal test</p>
+                <button className='border border-zinc-500 inline-flex items-center h-6 rounded-full text-sm whitespace-nowrap px-2 mr-1.5 mt-1.5' onClick={onClose}>Close</button>
             </div>
         </div>
     );

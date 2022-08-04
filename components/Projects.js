@@ -8,7 +8,8 @@ const Projects = (props) => {
 
     const [modalOn, setModalOn] = useState(false);
 
-    const clicked = () => {setModalOn(true)}
+    const handleOnOpen = () => setModalOn(true);
+    const handleOnClose = () => setModalOn(false);
 
     return (
         <div id="projects" className="pt-3">
@@ -16,7 +17,7 @@ const Projects = (props) => {
                 {
                     props.children.map((data, index) => {
                         return <li key={data.id} className="mx-2 rounded-lg border border-zinc-500">
-                            <div className="overflow-hidden cursor-pointer" onClick={clicked}>
+                            <div className="overflow-hidden cursor-pointer" onClick={handleOnOpen}>
                                 <CoverRender>{data}</CoverRender>
                             </div>
 
@@ -30,7 +31,7 @@ const Projects = (props) => {
                     })
                 }
             </ul>
-            {modalOn && < Modal setModalOn={setModalOn} />}
+            <Modal onClose={handleOnClose} visible={modalOn} />
         </div>
     );
 };
