@@ -8,7 +8,7 @@ function Contact(props){
         <div>
             <Head><title>{props.user.name}-Contact</title></Head>
             <Hero>{props.user.name}</Hero>
-            <div class="mt-6 sm:mt-10 flex justify-center space-x-6 ">
+            <div className="mt-6 sm:mt-10 flex justify-center space-x-6 ">
                 <MenuItem href="">Projects</MenuItem>
                 <MenuItem href="about">About</MenuItem>
                 <MenuItem href="contact">Contact</MenuItem>
