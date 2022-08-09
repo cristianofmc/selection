@@ -10,6 +10,7 @@ const Projects = (props) => {
 
     const handleOnOpen = () => setModalOn(true);
     const handleOnClose = () => setModalOn(false);
+    var modalData = '';
 
     return (
         <div id="projects" className="pt-3">
@@ -17,7 +18,7 @@ const Projects = (props) => {
                 {
                     props.children.map((data, index) => {
                         return <li key={data.id} className="mx-2 rounded-lg border border-zinc-500">
-                            <div className="overflow-hidden cursor-pointer" onClick={handleOnOpen}>
+                            <div className="overflow-hidden cursor-pointer" onClick={ () => handleOnOpen }>
                                 <CoverRender>{data}</CoverRender>
                             </div>
 
@@ -31,7 +32,7 @@ const Projects = (props) => {
                     })
                 }
             </ul>
-            <Modal onClose={handleOnClose} visible={modalOn} />
+            <Modal onClose={handleOnClose} visible={modalOn} projectModalData={modalData}/>
         </div>
     );
 };
