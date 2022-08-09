@@ -7,18 +7,20 @@ import Tag from './Tag';
 const Projects = (props) => {
 
     const [modalOn, setModalOn] = useState(false);
+    const [modalData, setModalData] = useState(null);
 
     const handleOnOpen = () => setModalOn(true);
     const handleOnClose = () => setModalOn(false);
-    var modalData = '';
 
     return (
         <div id="projects" className="pt-3">
             <ul key="1" className="mx-4 grid sm:grid-cols-2 md:grid-cols-4  gap-y-10 gap-x-6">
                 {
                     props.children.map((data, index) => {
-                        return <li key={data.id} className="mx-2 rounded-lg border border-zinc-500">
-                            <div className="overflow-hidden cursor-pointer" onClick={ () => handleOnOpen }>
+                        return <li id={data.id} key={data.id} className="mx-2 rounded-lg border border-zinc-500">
+                            <div className="overflow-hidden cursor-pointer" 
+                            onClick={() => {setModalData(data); handleOnOpen();} }>
+
                                 <CoverRender>{data}</CoverRender>
                             </div>
 
@@ -32,7 +34,7 @@ const Projects = (props) => {
                     })
                 }
             </ul>
-            <Modal onClose={handleOnClose} visible={modalOn} projectModalData={modalData}/>
+            <Modal onClose={handleOnClose} visible={modalOn} modalData={modalData}/>
         </div>
     );
 };
