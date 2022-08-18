@@ -21,7 +21,7 @@ const Projects = (props) => {
                             <div className="overflow-hidden cursor-pointer" 
                             onClick={() => {setModalData(data); handleOnOpen();} }>
 
-                                <CoverRender>{data}</CoverRender>
+                                <CoverRender width="600" height="400" >{data}</CoverRender>
                             </div>
 
                             <div className="px-4 pt-3">

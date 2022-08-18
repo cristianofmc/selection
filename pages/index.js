@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import MenuItem from '../components/MenuItem';
