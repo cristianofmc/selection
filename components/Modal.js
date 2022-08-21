@@ -1,9 +1,8 @@
 import CoverRender from "./CoverRender";
 import Tag from "./Tag";
 import Close from "./Icons/Close";
-import GitFork from "./Icons/GitFork";
-import GitStar from "./Icons/GitStar";
-import GitWatch from "./Icons/GitWatch";
+import GitHubForkIcon from "./Icons/GitHubForkIcon";
+import GitHubIcon from "./Icons/GitHubIcon";
 
 
 const Modal = ({visible, onClose, modalData}) => {
@@ -22,9 +21,9 @@ const Modal = ({visible, onClose, modalData}) => {
                     <div className="overflow-hidden cursor-pointer">
                         <CoverRender width={coverSize.width} height={coverSize.height}>{modalData}</CoverRender>
                     </div>
-                    <div class="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
-                        <button type="button" class="rounded-full text-white bg-gray-900 bg-opacity-[.03] hover:bg-gray-900 hover:bg-opacity-10 focus:outline-none p-1" onClick={onClose}>
-                            <span class="sr-only">Close modal</span>
+                    <div className="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
+                        <button type="button" className="rounded-full text-white bg-gray-900 bg-opacity-[.03] hover:bg-gray-900 hover:bg-opacity-10 focus:outline-none p-1" onClick={onClose}>
+                            <span className="sr-only">Close modal</span>
                             <Close/>
                         </button>
                     </div>
@@ -35,14 +34,11 @@ const Modal = ({visible, onClose, modalData}) => {
                 </div>
                 <Tag>{modalData.topics}</Tag>
                 <div className="my-1 text-gray-900">
-                    <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm" href="/">
-                        <GitWatch  width={15} height={15} class="text-neutral-700 fill-current"/> <span className="ml-1">Watch</span>
+                    <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm" target="_blank" href={modalData.html_url}>
+                        <GitHubIcon  width={15} height={15} className="text-neutral-700 fill-current"/> <span className="ml-1">GitHub</span>
                     </a>
-                    <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm" href="/">
-                        <GitFork  width={15} height={15} class="text-neutral-700"/> <span className="ml-1">Fork</span>
-                    </a>
-                    <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm" href="/">
-                        <GitStar  width={15} height={15} class="text-neutral-700 fill-current"/> <span className="ml-1">Star</span>
+                    <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm" target="_blank" href={`${modalData.html_url}/fork`}>
+                        <GitHubForkIcon  width={15} height={15} className="text-neutral-700"/> <span className="ml-1">Fork</span>
                     </a>
                 </div>
             </div>

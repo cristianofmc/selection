@@ -9,8 +9,15 @@ const Projects = (props) => {
     const [modalOn, setModalOn] = useState(false);
     const [modalData, setModalData] = useState(null);
 
-    const handleOnOpen = () => setModalOn(true);
-    const handleOnClose = () => setModalOn(false);
+    const handleOnOpen = () => {
+        document.body.classList.add("overflow-y-hidden");
+        setModalOn(true);
+
+    }
+    const handleOnClose = () => {
+        document.body.classList.remove("overflow-y-hidden");
+        setModalOn(false);
+    }
 
     return (
         <div id="projects" className="py-3">

@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const GitFork = (props) => (
+const GitHubForkIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -18,4 +18,4 @@ const GitFork = (props) => (
   </svg>
 )
 
-export default GitFork;
+export default GitHubForkIcon;
