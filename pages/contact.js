@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import MenuItem from '../components/MenuItem';
+import configData from '../lib/config.json'
 import { getUserDetails, getReposByTopics} from '../lib/github-api';
 
 function Contact(props){
@@ -18,7 +19,7 @@ function Contact(props){
                     <div id="contact" className="flex mx-4 space-x-4">
                         <div className="pt-2 max-w-md">
                             Let me help you <b>innovate</b>, <b>produce better</b>, or have a <b>good conversation</b>! 
-                            Please, contact me via <a href={`${process.env.linkedin_url}`} target="_blank" className="text-sky-500 hover:text-blue-600">{'<'} linkedin {'>'}</a>.
+                            Please, contact me via <a href={`${configData.LINKEDIN_URL}`} target="_blank" className="text-sky-500 hover:text-blue-600">{'<'} linkedin {'>'}</a>.
                             I will answer you as soon as possible. 😀
                         </div>
                     </div>

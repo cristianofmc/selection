@@ -21,10 +21,10 @@ const Projects = (props) => {
 
     return (
         <div id="projects" className="py-3">
-            <ul key="1" className="mx-4 grid sm:grid-cols-2 md:grid-cols-4  gap-y-10 gap-x-6">
+            <ul key="1" className="mx-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
                 {
                     props.children.map((data, index) => {
-                        return <li id={data.id} key={data.id} className="mx-2 rounded-lg border border-neutral-300">
+                        return <li id={data.id} key={data.id} className="rounded-lg border border-neutral-300">
                             <div className="overflow-hidden cursor-pointer" 
                             onClick={() => {setModalData(data); handleOnOpen();} }>
 
@@ -32,7 +32,7 @@ const Projects = (props) => {
                             </div>
 
                             <div className="px-4 pt-3">
-                                <h1 className="font-bold">{data.name}</h1>
+                                <h1 className="font-bold truncate">{data.name}</h1>
                                 <p>{data.description}</p>
                             </div>
                             

@@ -1,6 +1,6 @@
 import CoverRender from "./CoverRender";
 import Tag from "./Tag";
-import Close from "./Icons/Close";
+import CloseIcon from "./Icons/CloseIcon";
 import GitHubForkIcon from "./Icons/GitHubForkIcon";
 import GitHubIcon from "./Icons/GitHubIcon";
 
@@ -24,7 +24,7 @@ const Modal = ({visible, onClose, modalData}) => {
                     <div className="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
                         <button type="button" className="rounded-full text-white bg-gray-900 bg-opacity-[.03] hover:bg-gray-900 hover:bg-opacity-10 focus:outline-none p-1" onClick={onClose}>
                             <span className="sr-only">Close modal</span>
-                            <Close/>
+                            <CloseIcon/>
                         </button>
                     </div>
                     <div className="px-4">
