@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import MenuItem from '../components/MenuItem';
+import configData from '../lib/config.json'
 import { getUserDetails, getReposByTopics} from '../lib/github-api';
 
 
@@ -21,7 +22,7 @@ function About(props){
                         <div className="pt-2 max-w-md">
                             {props.user.bio}
                             <div className="mt-3">
-                                <a href={`${process.env.linkedin_url}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">linkedin</a>
+                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">linkedin</a>
                                 <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">github</a>
                             </div>
                         </div>

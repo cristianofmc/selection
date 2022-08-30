@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const Close = (props) => (
+const CloseIcon = (props) => (
   <svg
     className="h-6 w-6"
     xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const Close = (props) => (
   </svg>
 )
 
-export default Close;
+export default CloseIcon;
