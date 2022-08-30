@@ -21,7 +21,7 @@ const Projects = (props) => {
 
     return (
         <div id="projects" className="py-3">
-            <ul key="1" className="mx-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
+            <ul key="1" className="mx-2 md:mx-4 grid  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
                 {
                     props.children.map((data, index) => {
                         return <li id={data.id} key={data.id} className="rounded-lg border border-neutral-300">
