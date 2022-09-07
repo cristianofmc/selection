@@ -12,8 +12,8 @@ const Projects = (props) => {
     const handleOnOpen = () => {
         document.body.classList.add("overflow-y-hidden");
         setModalOn(true);
-
     }
+    
     const handleOnClose = () => {
         document.body.classList.remove("overflow-y-hidden");
         setModalOn(false);

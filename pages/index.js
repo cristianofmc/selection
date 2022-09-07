@@ -3,21 +3,22 @@ import Hero from "../components/Hero";
 import MenuItem from "../components/MenuItem";
 import Projects from "../components/Projects";
 import TopicSearch from "../components/TopicSearch";
-import configData from "../lib/config.json";
 import { getUserDetails, getReposDetails, filterReposByTopics,} from "../lib/github-api";
 import { useState } from "react";
 
 function Home(props) {
   const [tagSearch, setTagSearch] = useState([]);
-  const keyTag = configData.KEY_TAG;
 
   const handleKeyDown = (e) => {
     if (e.key !== "Enter") return;
 
-    const value = e.target.value;
-    if (!value.trim()) return;
+    const value = e.target.value.trim();
+    if (!value) return;
 
-    setTagSearch([...tagSearch, value]);
+    if(!tagSearch.includes(value)){
+      setTagSearch([...tagSearch, value]);
+    }
+    
     e.target.value = "";
   };
 

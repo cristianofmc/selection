@@ -32,7 +32,7 @@ const Modal = ({visible, onClose, modalData}) => {
                         <p className="text-base font-normal tracking-normal leading-6 pt-1 pb-3" >{modalData.description}</p>
                     </div>
                 </div>
-                <Topic close={false} >{modalData.topics}</Topic>
+                <Topic close={false}>{modalData.topics}</Topic>
                 <div className="my-1 text-gray-900">
                     <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm" target="_blank" href={modalData.html_url}>
                         <GitHubIcon  width={15} height={15} className="text-neutral-700 fill-current"/> <span className="ml-1">GitHub</span>
