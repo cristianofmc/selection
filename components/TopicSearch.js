@@ -10,7 +10,7 @@ const TopicSearch = ({onKeyDown, tags, onRemove}) => {
     for (const tag of tags) sumTagsLength += tag.length;
     
     return(
-        <div className="mx-4 max-w-[91%]">
+        <div className="mx-4">
                 <div className="grid lg:gap-x-8 lg:grid-cols-4 sm:grid-cols-2 ">
                     <div className="overflow-hidden lg:col-start-2 lg:col-end-4 sm:col-start-1 sm:col-end-3">
                         <div className="h-12 flex flex-nowrap overflow-hidden w-full text-sm text-black/85 rounded-full border border-neutral-300 hover:shadow hover:shadow-neutral-800/20 focus:shadow focus:shadow-neutral-800/20 ">    
@@ -24,7 +24,7 @@ const TopicSearch = ({onKeyDown, tags, onRemove}) => {
                                 (tags.length < 3 && sumTagsLength < 36) &&
 
                                 <input type="text" id="tag-search" onKeyDown={onKeyDown}
-                                className={`outline-none grow shrink-0 overflow-hidden flex-wrap break-inside-avoid basis-20 rounded-full${displayInput ? `inline` : `disable`}`}
+                                className={`outline-none grow shrink-0 overflow-hidden flex-wrap break-inside-avoid basis-20 rounded-full ${displayInput ? `inline` : `hidden`}`}
                                 maxLength="23"
                                 placeholder="Search Tags" required/>                                
                             }
