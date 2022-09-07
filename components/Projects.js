@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import CoverRender  from './CoverRender';
 import Modal from './Modal';
-import Tag from './Tag';
+import Topic from './Topic';
 
 const Projects = (props) => {
 
@@ -12,8 +12,8 @@ const Projects = (props) => {
     const handleOnOpen = () => {
         document.body.classList.add("overflow-y-hidden");
         setModalOn(true);
-
     }
+    
     const handleOnClose = () => {
         document.body.classList.remove("overflow-y-hidden");
         setModalOn(false);
@@ -27,8 +27,7 @@ const Projects = (props) => {
                         return <li id={data.id} key={data.id} className="rounded-lg border border-neutral-300">
                             <div className="overflow-hidden cursor-pointer" 
                             onClick={() => {setModalData(data); handleOnOpen();} }>
-
-                                <CoverRender width="600" height="400" >{data}</CoverRender>
+                                <CoverRender width="600" height="400">{data}</CoverRender>
                             </div>
 
                             <div className="px-4 pt-3">
@@ -36,7 +35,7 @@ const Projects = (props) => {
                                 <p>{data.description}</p>
                             </div>
                             
-                            <Tag>{data.topics}</Tag>
+                            <Topic close={false}>{data.topics}</Topic>
                         </li>
                     })
                 }
