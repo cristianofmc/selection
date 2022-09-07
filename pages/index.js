@@ -29,7 +29,7 @@ function Home(props) {
   const filteredRepos = filterReposByTopics(props.repos, tagSearch);
 
   return (
-    <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 font-roboto">
+    <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 text-hero-black font-roboto">
       <Head>
         <title>{props.user.name}</title>
       </Head>
