@@ -7,7 +7,7 @@ import { getUserDetails, getReposByTopics} from '../lib/github-api';
 
 function About(props){
     return(
-        <div>
+        <div className='font-roboto'>
             <Head><title>{props.user.name}-About</title></Head>
             <Hero>{props.user.name}</Hero>
             <div className="mt-6 sm:mt-10 flex justify-center space-x-6 ">
