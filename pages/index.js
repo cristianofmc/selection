@@ -18,7 +18,7 @@ function Home(props) {
     if(!tagSearch.includes(value)){
       setTagSearch([...tagSearch, value]);
     }
-    
+
     e.target.value = "";
   };
 
@@ -29,7 +29,7 @@ function Home(props) {
   const filteredRepos = filterReposByTopics(props.repos, tagSearch);
 
   return (
-    <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4">
+    <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 font-roboto">
       <Head>
         <title>{props.user.name}</title>
       </Head>
