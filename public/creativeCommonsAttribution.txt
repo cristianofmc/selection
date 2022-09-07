@@ -2,18 +2,3 @@ File: favicon.ico
 by: Daniel Bruce
 LIcense: Creative Commons
 download: iconscout.com/icon/briefcase-401 [2022-03-05 16:34(GTM-3)]
-
-File: git_fork_ico.svg
-by: tabler.io
-License: The MIT
-download: seekicon.com/free-icon/git-fork_1 [2022-08-15 21:20(GTM-3)]
-
-File: star_project.svg
-by: typicons.com
-License: CC BY-SA 4.0
-download: seekicon.com/free-icon/star-outline_6 [2022-08-15 21:20(GTM-3)]
-
-File: watch_project.svg
-by: zurb.com
-License: CC0 1.0
-download: seekicon.com/free-icon/eye_23 [2022-08-15 21:20(GTM-3)]
