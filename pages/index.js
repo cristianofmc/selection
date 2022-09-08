@@ -12,7 +12,7 @@ function Home(props) {
   const handleKeyDown = (e) => {
     if (e.key !== "Enter") return;
 
-    const value = e.target.value.trim();
+    const value = e.target.value.trim().toLowerCase();
     if (!value) return;
 
     if(!tagSearch.includes(value)){

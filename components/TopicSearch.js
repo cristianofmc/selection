@@ -24,7 +24,7 @@ const TopicSearch = ({onKeyDown, tags, onRemove}) => {
                                 (tags.length < 3 && sumTagsLength < 36) &&
 
                                 <input type="text" id="tag-search" onKeyDown={onKeyDown}
-                                className={`outline-none grow shrink-0 overflow-hidden flex-wrap break-inside-avoid basis-20 rounded-full ${displayInput ? `inline` : `hidden`}`}
+                                className={`lowercase outline-none grow shrink-0 overflow-hidden flex-wrap break-inside-avoid basis-20 rounded-full ${displayInput ? `inline` : `hidden`}`}
                                 maxLength="23"
                                 autoComplete="off"
                                 placeholder="Search Tags" required/>                                
