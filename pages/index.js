@@ -1,55 +1,37 @@
+import { getUserDetails, getReposDetails, filterReposByTopics,} from "../lib/github-api";
 import Head from "next/head";
 import Hero from "../components/Hero";
 import MenuItem from "../components/MenuItem";
 import Projects from "../components/Projects";
 import TopicSearch from "../components/TopicSearch";
-import { getUserDetails, getReposDetails, filterReposByTopics,} from "../lib/github-api";
 import { useState } from "react";
+import TopicContext from "../lib/topicContext";
 
 function Home(props) {
-  const [tagSearch, setTagSearch] = useState([]);
+  const [topicSearch, setTopicSearch] = useState([]);
 
-  const handleKeyDown = (e) => {
-    if (e.key !== "Enter") return;
-
-    const value = e.target.value.trim().toLowerCase();
-    if (!value) return;
-
-    if(!tagSearch.includes(value)){
-      setTagSearch([...tagSearch, value]);
-    }
-
-    e.target.value = "";
-  };
-
-  const removeTagByIndex = (index) => {
-    setTagSearch(tagSearch.filter((ele, i) => i !== index));
-  };
-
-  const filteredRepos = filterReposByTopics(props.repos, tagSearch);
+  const filteredRepos = filterReposByTopics(props.repos, topicSearch);
 
   return (
-    <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 text-hero-black font-roboto">
-      <Head>
-        <title>{props.user.name}</title>
-      </Head>
-      <Hero>{props.user.name}</Hero>
-      <div className="mt-6 sm:mt-10 flex justify-center space-x-6 ">
-        <MenuItem href="">Projects</MenuItem>
-        <MenuItem href="about">About</MenuItem>
-        <MenuItem href="contact">Contact</MenuItem>
+    <TopicContext.Provider value={[topicSearch, setTopicSearch]}>
+      <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 text-hero-black font-roboto">
+        <Head>
+          <title>{props.user.name}</title>
+        </Head>
+        <Hero>{props.user.name}</Hero>
+        <div className="mt-6 sm:mt-10 flex justify-center space-x-6 ">
+          <MenuItem href="">Projects</MenuItem>
+          <MenuItem href="about">About</MenuItem>
+          <MenuItem href="contact">Contact</MenuItem>
+        </div>
+        <div className="mt-10">
+          <TopicSearch/>
+        </div>
+        <section className="mt-4">
+          <Projects>{filteredRepos}</Projects>
+        </section>
       </div>
-      <div className="mt-10">
-        <TopicSearch
-          onKeyDown={handleKeyDown}
-          tags={tagSearch}
-          onRemove={removeTagByIndex}
-        />
-      </div>
-      <section className="mt-4">
-        <Projects>{filteredRepos}</Projects>
-      </section>
-    </div>
+    </TopicContext.Provider>
   );
 }
 
