@@ -32,10 +32,11 @@ const Projects = (props) => {
 
                             <div className="px-4 pt-3">
                                 <h1 className="font-bold truncate">{data.name}</h1>
-                                <p>{data.description}</p>
+                                <p className='pt-px'>{data.description}</p>
                             </div>
-                            
-                            <Topic close={false}>{data.topics}</Topic>
+                            <div className="px-2.5 py-5px overflow-hidden">
+                                <Topic close={false}>{data.topics}</Topic>
+                            </div>
                         </li>
                     })
                 }
