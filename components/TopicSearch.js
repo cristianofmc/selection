@@ -44,7 +44,7 @@ const TopicSearch = () => {
                             className="scroll-smooth items-center pl-2 pb-1.5 inline-flex shink-0 flex-initial whitespace-nowrap overflow-x-auto overflow-y-hidden">
                                 <Topic close={true} onRemove={removeTagByIndex}>{topicSearch}</Topic>
                             </div>
-                            <input type="search" id="tag-search" onKeyDown={handleKeyDown} 
+                            <input aria-label="Input the technologies to filter projects" type="search" id="tag-search" onKeyDown={handleKeyDown} 
                             className=" bg-gradient-to-l from-white h-12 pl-3 lowercase outline-none flex-grow flex-shrink-0 overflow-clip basis-32 rounded-full"
                             maxLength="23"
                             autoComplete="off"
