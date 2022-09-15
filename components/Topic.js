@@ -14,7 +14,7 @@ const Topic = (props) => {
                     <div className={`py-3px ${props.close ? `pl-5px pr-px` : `px-5px `}`}>
                         <span className='p-0.5 text-ellipsis overflow-hidden'>{tag}</span>
                     </div>
-                    <span onClick={() => {props.onRemove(index)}} 
+                    <span onClick={() => {props.onRemove(index)}} aria-hidden="true"
                     className={`cursor-pointer py-px px-2 rounded-full hover:bg-black hover:bg-opacity-[.20] ${props.close ? `block` : `hidden`}`}>&times;</span>
                 </div>
             ))
