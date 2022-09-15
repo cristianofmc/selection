@@ -1,4 +1,5 @@
-import Head from 'next/head';
+
+import HeadComponent from '../components/HeadComponent';
 import Hero from '../components/Hero';
 import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
@@ -9,7 +10,7 @@ import { getUserDetails, getReposByTopics} from '../lib/github-api';
 function Contact(props){
     return(
         <div className='font-roboto text-hero-black'>
-            <Head><title>{props.user.name}-Contact</title></Head>
+            <HeadComponent name={props.user.name} title='Contact'></HeadComponent>
             <Hero>{props.user.name}</Hero>
             <Menu>
                 <MenuItem href="">Projects</MenuItem>
