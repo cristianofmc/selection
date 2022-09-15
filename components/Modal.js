@@ -15,7 +15,7 @@ const Modal = ({visible, onClose, modalData}) => {
     };
 
     return(
-        <FocusTrap focusTrapOptions={{onDeactivate: onClose}}>
+        <FocusTrap focusTrapOptions={{onDeactivate: onClose, initialFocus: "false"}} >
             <div id='projectModal' onClick={handleOnClose} className="bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center">
                 <div className="bg-white mx-2 rounded-lg border border-zinc-500 max-w-xl">
                     <div className="group relative">
