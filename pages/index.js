@@ -1,6 +1,7 @@
 import { getUserDetails, getReposDetails, filterReposByTopics,} from "../lib/github-api";
 import Head from "next/head";
 import Hero from "../components/Hero";
+import Menu from "../components/Menu";
 import MenuItem from "../components/MenuItem";
 import Projects from "../components/Projects";
 import TopicSearch from "../components/TopicSearch";
@@ -19,11 +20,11 @@ function Home(props) {
           <title>{props.user.name}</title>
         </Head>
         <Hero>{props.user.name}</Hero>
-        <div className="mt-6 sm:mt-10 flex justify-center space-x-6 ">
+        <Menu>
           <MenuItem href="">Projects</MenuItem>
           <MenuItem href="about">About</MenuItem>
           <MenuItem href="contact">Contact</MenuItem>
-        </div>
+        </Menu>
         <div className="mt-10">
           <TopicSearch/>
         </div>

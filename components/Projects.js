@@ -23,34 +23,35 @@ const Projects = (props) => {
     if(!props.children.length) return <NoResults/>
 
     return (
-        <div id="projects" className="py-3">
-            <ul key="1" className="mx-2 md:mx-4 grid  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
-                {
-                    props.children.map((data, index) => {
-                        return <li focus-within id={data.id} key={data.id} className="rounded-lg border border-neutral-300">
-                            <div className="overflow-hidden cursor-pointer" 
+        <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
+            {
+                props.children.map((data, index) => {
+                    return <article id={data.id} key={data.id} className="rounded-lg border border-neutral-300">
+                        <header>
+                            <figure className="overflow-hidden cursor-pointer" 
                             onClick={() => {setModalData(data); handleOnOpen();} }>
                                 <CoverRender width="600" height="400">{data}</CoverRender>
-                            </div>
+                            </figure>
 
                             <div className="px-4 pt-3">
                                 <div className="overflow-hidden cursor-pointer" 
                                 onClick={() => {setModalData(data); handleOnOpen();} }>
-                                    <button className="font-bold truncate">{data.name}</button>
+                                    <button className="font-bold truncate">
+                                        <h2>{data.name}</h2>
+                                    </button>
                                 </div>
                             </div>
+                        </header>
+                        <div className="px-4">
+                            <p className='pt-px'>{data.description}</p>
+                        </div>
 
-                            <div className="px-4">
-                                <p className='pt-px'>{data.description}</p>
-                            </div>
-
-                            <div className="px-2.5 py-5px overflow-hidden">
-                                <Topic close={false}>{data.topics}</Topic>
-                            </div>
-                        </li>
-                    })
-                }
-            </ul>
+                        <div className="px-2.5 py-5px overflow-hidden">
+                            <Topic close={false}>{data.topics}</Topic>
+                        </div>
+                    </article>
+                })
+            }
             <Modal onClose={handleOnClose} visible={modalOn} modalData={modalData}/>
         </div>
     );
