@@ -19,12 +19,12 @@ function About(props){
             <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
                 <div className='grid justify-items-center pt-3'>
                     <div id="about" className="flex mx-4 space-x-4">
-                        <img className="w-28 h-28 rounded-full mr-2" src={props.user.avatar_url}></img>
+                        <img className="w-28 h-28 rounded-full mr-2" src={props.user.avatar_url} alt="Photo"></img>
                         <div className="pt-2 max-w-md">
                             {props.user.bio}
                             <div className="mt-3">
-                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">linkedin</a>
-                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">github</a>
+                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-600 hover:text-blue-700">linkedin</a>
+                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-600 hover:text-blue-700">github</a>
                             </div>
                         </div>
                     </div>
