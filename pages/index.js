@@ -15,7 +15,6 @@ function Home(props) {
 
   return (
     <TopicContext.Provider value={[topicSearch, setTopicSearch]}>
-      <noscript>Your browser does not support JavaScript!</noscript>
       <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 text-hero-black font-roboto">
         <Head>
           <title>{props.user.name}</title>

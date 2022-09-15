@@ -1,19 +1,21 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
+import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import configData from '../lib/config.json'
 import { getUserDetails, getReposByTopics} from '../lib/github-api';
+
 
 function Contact(props){
     return(
         <div className='font-roboto text-hero-black'>
             <Head><title>{props.user.name}-Contact</title></Head>
             <Hero>{props.user.name}</Hero>
-            <div className="mt-6 sm:mt-10 flex justify-center space-x-6 ">
+            <Menu>
                 <MenuItem href="">Projects</MenuItem>
                 <MenuItem href="about">About</MenuItem>
                 <MenuItem href="contact">Contact</MenuItem>
-            </div>
+            </Menu>
             <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
                 <div className='grid justify-items-center pt-3'>
                     <div id="contact" className="flex mx-4 space-x-4">
