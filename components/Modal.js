@@ -23,7 +23,7 @@ const Modal = ({visible, onClose, modalData}) => {
                             <CoverRender width={coverSize.width} height={coverSize.height}>{modalData}</CoverRender>
                         </div>
                         <div className="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
-                            <a href="#void" type="button" 
+                            <a href="#" type="button" 
                             className="rounded-full  p-0.5 text-white bg-gray-900 bg-opacity-[.03]
                              hover:bg-gray-900 hover:bg-opacity-10 
                              focus:outline-none 
