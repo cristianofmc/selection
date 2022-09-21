@@ -15,7 +15,7 @@ const Modal = ({visible, onClose, modalData}) => {
     };
 
     return(
-        <FocusTrap focusTrapOptions={{onDeactivate: onClose, initialFocus: "false"}} >
+        <FocusTrap focusTrapOptions={{onDeactivate: onClose, initialFocus: false}} >
             <div id='projectModal' onClick={handleOnClose} className="bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center">
                 <div className="bg-white mx-2 rounded-lg border border-zinc-500 max-w-xl">
                     <div className="group relative">
@@ -23,7 +23,12 @@ const Modal = ({visible, onClose, modalData}) => {
                             <CoverRender width={coverSize.width} height={coverSize.height}>{modalData}</CoverRender>
                         </div>
                         <div className="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
-                            <a type="button" className="rounded-full text-white bg-gray-900 bg-opacity-[.03] hover:bg-gray-900 hover:bg-opacity-10  focus:outline-none p-1" onClick={onClose}>
+                            <a href="#void" type="button" 
+                            className="rounded-full  p-1 text-white bg-gray-900 bg-opacity-[.03]
+                             hover:bg-gray-900 hover:bg-opacity-10 
+                             focus:outline-none 
+                             focus-visible:ring focus-visible:ring-black" 
+                            onClick={onClose}>
                                 <span className="sr-only">Close modal</span>
                                 <CloseIcon/>
                             </a>
