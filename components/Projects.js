@@ -35,14 +35,14 @@ const Projects = (props) => {
                             </figure>
 
                             <div className="absolute top-2 right-2 z-10 -ml-8 flex">
-                                <a aria-hidden="true" href="#void" type="button" 
+                                <a href="#" type="button" 
                                 className="rounded-full  p-px text-white bg-gray-900 bg-opacity-[.05]
                                 hover:bg-gray-900 hover:bg-opacity-10 
                                 focus:outline-none 
                                 focus-visible:ring-2 focus-visible:ring-black"
                                 onClick={() => {setModalData(data); handleOnOpen();} }>
                                     <span className="sr-only">See details</span>
-                                    <SeeDetailsIcon  width={30} height={30} className="text-white fill-current"/>
+                                    <SeeDetailsIcon aria-hidden="true" width={30} height={30} className="text-white fill-current"/>
                                 </a>
                             </div>
 

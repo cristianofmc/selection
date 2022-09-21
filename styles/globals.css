@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "Ubuntu";
-    src: url("../public/fonts/Ubuntu-Regular.ttf");
-}
+@layer base {
+    @font-face {
+        font-family: "Ubuntu";
+        src: url("../public/fonts/Ubuntu-Regular.ttf");
+        font-display: swap;
+    },
 
-@font-face {
-    font-family: "Roboto";
-    src: url("../public/fonts/Roboto-Regular.ttf");
+    @font-face {
+        font-family: "Roboto";
+        src: url("../public/fonts/Roboto-Regular.ttf");
+        font-display: swap;
+    }
 }
 
 /* clears the 'X' from Internet Explorer */
