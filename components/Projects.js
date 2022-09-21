@@ -29,13 +29,13 @@ const Projects = (props) => {
                 props.children.map((data, index) => {
                     return <article id={data.id} key={data.id} className="rounded-lg border border-neutral-300">
                         <header className='group relative'>
-                            <figure className="overflow-hidden cursor-pointer" 
+                            <figure aria-hidden="true" className="overflow-hidden cursor-pointer" 
                             onClick={() => {setModalData(data); handleOnOpen();} }>
                                 <CoverRender width="600" height="400">{data}</CoverRender>
                             </figure>
 
                             <div className="absolute top-2 right-2 z-10 -ml-8 flex">
-                                <a href="#void" type="button" 
+                                <a aria-hidden="true" href="#void" type="button" 
                                 className="rounded-full  p-px text-white bg-gray-900 bg-opacity-[.05]
                                 hover:bg-gray-900 hover:bg-opacity-10 
                                 focus:outline-none 

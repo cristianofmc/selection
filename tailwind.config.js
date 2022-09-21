@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        ubuntu: ['ubuntu'],
-        roboto: ['oboto', 'arial','sans-serif'],
+        ubuntu: ['Ubuntu'],
+        roboto: ['Roboto', 'arial','sans-serif'],
       },
       colors: {
         'hero-black': '#202124',

@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "ubuntu";
+    font-family: "Ubuntu";
     src: url("../public/fonts/Ubuntu-Regular.ttf");
-    font-family: "roboto";
+}
+
+@font-face {
+    font-family: "Roboto";
     src: url("../public/fonts/Roboto-Regular.ttf");
 }
 
