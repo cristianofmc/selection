@@ -34,23 +34,21 @@ const Projects = (props) => {
                                 <CoverRender width="600" height="400">{data}</CoverRender>
                             </figure>
 
-                            <div className="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
+                            <div className="absolute top-2 right-2 z-10 -ml-8 flex">
                                 <a href="#void" type="button" 
-                                className="rounded-full p-1 text-white bg-gray-900 bg-opacity-[.03]
+                                className="rounded-full  p-px text-white bg-gray-900 bg-opacity-[.05]
                                 hover:bg-gray-900 hover:bg-opacity-10 
                                 focus:outline-none 
-                                focus-visible:ring focus-visible:ring-black">
+                                focus-visible:ring-2 focus-visible:ring-black"
+                                onClick={() => {setModalData(data); handleOnOpen();} }>
                                     <span className="sr-only">See details</span>
-                                    <SeeDetailsIcon/>
+                                    <SeeDetailsIcon  width={30} height={30} className="text-white fill-current"/>
                                 </a>
                             </div>
 
                             <div className="px-4 pt-3">
-                                <div className="overflow-hidden cursor-pointer" 
-                                onClick={() => {setModalData(data); handleOnOpen();} }>
-                                    <button className="font-bold truncate">
-                                        <span className='text-lg'>{data.name}</span>
-                                    </button>
+                                <div className="overflow-hidden cursor-pointer">
+                                    <span className="font-bold truncate text-lg">{data.name}</span>
                                 </div>
 
                             </div>

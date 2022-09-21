@@ -24,10 +24,10 @@ const Modal = ({visible, onClose, modalData}) => {
                         </div>
                         <div className="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
                             <a href="#void" type="button" 
-                            className="rounded-full  p-1 text-white bg-gray-900 bg-opacity-[.03]
+                            className="rounded-full  p-0.5 text-white bg-gray-900 bg-opacity-[.03]
                              hover:bg-gray-900 hover:bg-opacity-10 
                              focus:outline-none 
-                             focus-visible:ring focus-visible:ring-black" 
+                             focus-visible:ring-2 focus-visible:ring-black" 
                             onClick={onClose}>
                                 <span className="sr-only">Close modal</span>
                                 <CloseIcon/>
