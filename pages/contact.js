@@ -10,7 +10,11 @@ import { getUserDetails, getReposByTopics} from '../lib/github-api';
 function Contact(props){
     return(
         <div className='font-roboto text-hero-black'>
-            <HeadComponent name={props.user.name} title='Contact'></HeadComponent>
+            <HeadComponent 
+                name={props.user.name} 
+                description={props.user.bio}
+                title='Contact'>
+            </HeadComponent>
             <Hero>{props.user.name}</Hero>
             <Menu>
                 <MenuItem href="">Projects</MenuItem>
@@ -22,7 +26,10 @@ function Contact(props){
                     <div id="contact" className="flex mx-4 space-x-4">
                         <div className="pt-2 max-w-md">
                             Let me help you <b>innovate</b>, <b>produce better</b>, or have a <b>good conversation</b>! 
-                            Please, contact me via <a href={`${configData.LINKEDIN_URL}`} target="_blank" className="text-sky-600 hover:text-blue-700">{'<'} linkedin {'>'}</a>.
+                            Please, contact me via 
+                            <a href={`${configData.LINKEDIN_URL}`} target="_blank" className="text-sky-700 hover:text-blue-800">
+                                {' <'}<span className='px-0.5'>linkedin</span>{'>'}
+                            </a>.
                             I will answer you as soon as possible. 😀
                         </div>
                     </div>

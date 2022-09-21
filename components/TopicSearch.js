@@ -33,11 +33,11 @@ const TopicSearch = () => {
       }, [topicSearch]);
       
     return(
-        <div className="mx-4" aria-hidden="true">
+        <div className="mx-4">
                 <div className="grid lg:gap-x-8 lg:grid-cols-4 sm:grid-cols-2">
                     <div className="overflow-hidden lg:col-start-2 lg:col-end-4 sm:col-start-1 sm:col-end-3 p-1">
                         <div className="max-h-16 min-h-full flex items-center text-sm text-black/85 z-40 rounded-full border border-neutral-300 hover:shadow hover:shadow-neutral-800/20 focus-within:shadow focus-within:shadow-neutral-800/20 ">    
-                            <div className="grow-0 inline-block flex-wrap  ml-3 pointer-events-none">
+                            <div aria-hidden="true" className="grow-0 inline-block flex-wrap  ml-3 pointer-events-none">
                                 <SearchIcon className="w-5 h-5  text-gray-500 dark:text-gray-400"/>
                             </div>
                             <div ref={scrollElement}

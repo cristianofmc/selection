@@ -15,7 +15,11 @@ function Home(props) {
 
   return (
     <TopicContext.Provider value={[topicSearch, setTopicSearch]}>
-      <HeadComponent name={props.user.name} title='Projects'></HeadComponent>
+      <HeadComponent 
+          name={props.user.name} 
+          description={props.user.bio}
+          title='Projects'>
+      </HeadComponent>
       <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 text-hero-black font-roboto">
         <Hero>{props.user.name}</Hero>
         <Menu>

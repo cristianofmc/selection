@@ -8,7 +8,11 @@ import HeadComponent from '../components/HeadComponent';
 function About(props){
     return(
         <div className='font-roboto text-hero-black'>
-            <HeadComponent name={props.user.name} title='About'></HeadComponent>
+            <HeadComponent 
+                name={props.user.name} 
+                description={props.user.bio}
+                title='About'>
+            </HeadComponent>
             <Hero>{props.user.name}</Hero>
             <Menu>
                 <MenuItem href="">Projects</MenuItem>
