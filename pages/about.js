@@ -1,29 +1,33 @@
-import Head from 'next/head';
 import Hero from '../components/Hero';
+import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import configData from '../lib/config.json'
 import { getUserDetails, getReposByTopics} from '../lib/github-api';
-
+import HeadComponent from '../components/HeadComponent';
 
 function About(props){
     return(
         <div className='font-roboto text-hero-black'>
-            <Head><title>{props.user.name}-About</title></Head>
+            <HeadComponent 
+                name={props.user.name} 
+                description={props.user.bio}
+                title='About'>
+            </HeadComponent>
             <Hero>{props.user.name}</Hero>
-            <div className="mt-6 sm:mt-10 flex justify-center space-x-6 ">
+            <Menu>
                 <MenuItem href="">Projects</MenuItem>
                 <MenuItem href="about">About</MenuItem>
                 <MenuItem href="contact">Contact</MenuItem>
-            </div>
+            </Menu>
             <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
                 <div className='grid justify-items-center pt-3'>
                     <div id="about" className="flex mx-4 space-x-4">
-                        <img className="w-28 h-28 rounded-full mr-2" src={props.user.avatar_url}></img>
+                        <img className="w-28 h-28 rounded-full mr-2" src={props.user.avatar_url} alt="Photo"></img>
                         <div className="pt-2 max-w-md">
                             {props.user.bio}
                             <div className="mt-3">
-                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">linkedin</a>
-                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-500 hover:text-blue-600">github</a>
+                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800">linkedin</a>
+                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800">github</a>
                             </div>
                         </div>
                     </div>

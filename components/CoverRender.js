@@ -9,7 +9,7 @@ const CoverRender = (props) => {
 
     return (
         <div className={`overflow-hidden ${displayimage ? `block` : `hidden`}`}>
-            <Image className="relative w-full  object-cover rounded-t-md"  src={cover_url} width={props.width} height={props.height} onError={() => setDisplayimage(false)}></Image>
+            <Image alt="" className="relative w-full  object-cover rounded-t-md"  src={cover_url} width={props.width} height={props.height} onError={() => setDisplayimage(false)}></Image>
         </div>
     );
 };
