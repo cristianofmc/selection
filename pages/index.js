@@ -20,14 +20,14 @@ function Home(props) {
           description={props.user.bio}
           title='Projects'>
       </HeadComponent>
-      <div className="max-w-7xl mx-auto sm:px-6 md:px-8 mb-4 text-hero-black font-roboto">
+      <div className="max-w-7xl mx-auto sm:px-6 md:px-8 pb-4 text-hero-black font-roboto">
         <Hero>{props.user.name}</Hero>
         <Menu>
           <MenuItem href="">Projects</MenuItem>
           <MenuItem href="about">About</MenuItem>
           <MenuItem href="contact">Contact</MenuItem>
         </Menu>
-        <div className="mt-10">
+        <div className="mt-11">
           <TopicSearch/>
         </div>
         <section className="mt-4">

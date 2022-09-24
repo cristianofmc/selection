@@ -10,7 +10,7 @@ const Topic = (props) => {
     return(
         <div>
             {tagsArray.map((tag, index) => (
-                <div key={`tag-${index}`} className="overflow-hidden tracking-widestPlus sm:text-sm text-xs leading-5 text-zinc-700 bg-black bg-opacity-[.08] inline-flex items-center h-6 rounded-full whitespace-nowrap mr-1.5 mt-1.5">
+                <div key={`tag-${index}`} className="overflow-hidden tracking-widestPlus sm:text-sm text-xs leading-5 text-topic-black bg-black bg-opacity-[.08] inline-flex items-center h-6 rounded-full whitespace-nowrap mr-1.5 mt-1.5">
                     <div className={`py-3px ${props.close ? `pl-5px pr-px` : `px-5px `}`}>
                         <span className='p-0.5 text-ellipsis overflow-hidden'>{tag}</span>
                     </div>

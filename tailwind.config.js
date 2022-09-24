@@ -11,6 +11,9 @@ module.exports = {
       },
       colors: {
         'hero-black': '#202124',
+        'topic-black': '#3c4043',
+        'border-gray': '#e0e0e0',
+        'dark-black': '#202124',
       },
       padding: {
         '5px': '5px',
