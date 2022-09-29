@@ -14,6 +14,9 @@
         src: url("../public/fonts/Roboto-Regular.ttf");
         font-display: swap;
     }
+    body{
+        @apply dark:dark:bg-dark-black
+    }
 }
 
 /* clears the 'X' from Internet Explorer */

@@ -13,6 +13,7 @@ module.exports = {
         'hero-black': '#202124',
         'topic-black': '#3c4043',
         'border-gray': '#e0e0e0',
+        'border-dark-grey': '#9AA0A6',
         'dark-black': '#202124',
       },
       padding: {
