@@ -15,7 +15,9 @@
         font-display: swap;
     }
     body{
-        @apply dark:dark:bg-dark-black
+        @apply text-hero-black
+        dark:bg-dark-black
+        dark:text-white-dark
     }
 }
 

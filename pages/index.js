@@ -20,7 +20,7 @@ function Home(props) {
           description={props.user.bio}
           title='Projects'>
       </HeadComponent>
-      <div className="max-w-7xl mx-auto sm:px-6 md:px-8 pb-4 text-hero-black font-roboto">
+      <div className="max-w-7xl mx-auto sm:px-6 md:px-8 pb-4 font-roboto">
         <Hero>{props.user.name}</Hero>
         <Menu>
           <MenuItem href="">Projects</MenuItem>

@@ -7,7 +7,7 @@ import HeadComponent from '../components/HeadComponent';
 
 function About(props){
     return(
-        <div className='font-roboto text-hero-black'>
+        <div className='font-roboto'>
             <HeadComponent 
                 name={props.user.name} 
                 description={props.user.bio}
@@ -26,8 +26,8 @@ function About(props){
                         <div className="pt-2 max-w-md">
                             {props.user.bio}
                             <div className="mt-3">
-                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800">linkedin</a>
-                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800">github</a>
+                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800 dark:text-sky-500 dark:hover:text-sky-400">linkedin</a>
+                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800 dark:text-sky-500 dark:hover:text-sky-400">github</a>
                             </div>
                         </div>
                     </div>

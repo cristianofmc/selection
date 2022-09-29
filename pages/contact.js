@@ -9,7 +9,7 @@ import { getUserDetails, getReposByTopics} from '../lib/github-api';
 
 function Contact(props){
     return(
-        <div className='font-roboto text-hero-black'>
+        <div className='font-roboto'>
             <HeadComponent 
                 name={props.user.name} 
                 description={props.user.bio}
@@ -27,7 +27,7 @@ function Contact(props){
                         <div className="pt-2 max-w-md">
                             Let me help you <b>innovate</b>, <b>produce better</b>, or have a <b>good conversation</b>! 
                             Please, contact me via 
-                            <a href={`${configData.LINKEDIN_URL}`} target="_blank" className="text-sky-700 hover:text-blue-800">
+                            <a href={`${configData.LINKEDIN_URL}`} target="_blank" className="text-sky-700 hover:text-blue-800 dark:text-sky-500 dark:hover:text-sky-400">
                                 {' <'}<span className='px-0.5'>linkedin</span>{'>'}
                             </a>.
                             I will answer you as soon as possible. 😀

@@ -15,6 +15,7 @@ module.exports = {
         'border-gray': '#e0e0e0',
         'border-dark-grey': '#9AA0A6',
         'dark-black': '#202124',
+        'white-dark': '#e8eaed',
       },
       padding: {
         '5px': '5px',
