@@ -24,10 +24,10 @@ const Projects = (props) => {
     if(!props.children.length) return <NoResults/>
 
     return (
-        <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
+        <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
             {
                 props.children.map((data, index) => {
-                    return <article id={data.id} key={data.id} className="rounded-lg border border-neutral-300">
+                    return <article id={data.id} key={data.id} className="rounded-lg border border-border-gray dark:border-project-dark-border">
                         <header className='group relative'>
                             <figure aria-hidden="true" className="overflow-hidden cursor-pointer" 
                             onClick={() => {setModalData(data); handleOnOpen();} }>
@@ -35,7 +35,7 @@ const Projects = (props) => {
                             </figure>
 
                             <div className="absolute top-2 right-2 z-10 -ml-8 flex">
-                                <a href="#" type="button" 
+                                <a href="##" type="button" 
                                 className="rounded-full  p-px text-white bg-gray-900 bg-opacity-[.05]
                                 hover:bg-gray-900 hover:bg-opacity-10 
                                 focus:outline-none 

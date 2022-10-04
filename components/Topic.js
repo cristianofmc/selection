@@ -7,15 +7,19 @@ const Topic = (props) => {
         return value != keyTag;
     });
 
-    return(
+return(
         <div>
             {tagsArray.map((tag, index) => (
-                <div key={`tag-${index}`} className="overflow-hidden tracking-widestPlus sm:text-sm text-xs leading-5 text-zinc-700 bg-black bg-opacity-[.08] inline-flex items-center h-6 rounded-full whitespace-nowrap mr-1.5 mt-1.5">
+                <div key={`tag-${index}`} 
+                className="overflow-hidden tracking-widestPlus sm:text-sm text-xs leading-5 text-topic-black bg-black/[.08] border border-transparent
+                 dark:border-topic-border-dark-grey/[.54] dark:text-white-dark dark:bg-transparent dark:bg-dark-black
+                  inline-flex items-center h-6 rounded-full whitespace-nowrap mr-1.5 mt-1.5">
                     <div className={`py-3px ${props.close ? `pl-5px pr-px` : `px-5px `}`}>
-                        <span className='p-0.5 text-ellipsis overflow-hidden'>{tag}</span>
+                        <span className='px-0.5 py-1 text-ellipsis overflow-hidden leading-5'>{tag}</span>
                     </div>
-                    <span onClick={() => {props.onRemove(index)}} aria-hidden="true"
-                    className={`cursor-pointer py-px px-2 rounded-full hover:bg-black hover:bg-opacity-[.20] ${props.close ? `block` : `hidden`}`}>&times;</span>
+                    <a onClick={() => {props.onRemove(index)}} aria-hidden="true" href="##"
+                    className={`cursor-pointer py-px px-2 rounded-full border border-transparent hover:bg-black hover:bg-opacity-[.20] focus:outline-none focus:bg-black focus:bg-opacity-[.20]
+                    dark:hover:border-border-dark-grey dark:focus:border-border-dark-grey dark:hover:bg-button-hero-black dark:focus:bg-button-hero-black ${props.close ? `block` : `hidden`}`}>&times;</a>
                 </div>
             ))
             }

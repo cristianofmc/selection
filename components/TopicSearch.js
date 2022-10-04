@@ -36,7 +36,9 @@ const TopicSearch = () => {
         <div className="mx-4">
                 <div className="grid lg:gap-x-8 lg:grid-cols-4 sm:grid-cols-2">
                     <div className="overflow-hidden lg:col-start-2 lg:col-end-4 sm:col-start-1 sm:col-end-3 p-1">
-                        <div className="max-h-16 min-h-full flex items-center text-sm text-black/85 z-40 rounded-full border border-neutral-300 hover:shadow hover:shadow-neutral-800/20 focus-within:shadow focus-within:shadow-neutral-800/20 ">    
+                        <div className="max-h-16 min-h-full flex items-center text-sm text-black/85 z-40 rounded-full border border-border-gray
+                         hover:shadow hover:shadow-neutral-800/20 focus-within:shadow focus-within:shadow-neutral-800/20
+                        dark:border-project-dark-border dark:hover:bg-button-hero-black dark:border-border-dark-grey dark:focus-within:bg-button-hero-black">    
                             <div aria-hidden="true" className="grow-0 inline-block flex-wrap  ml-3 pointer-events-none">
                                 <SearchIcon className="w-5 h-5  text-gray-500 dark:text-gray-400"/>
                             </div>
@@ -45,7 +47,7 @@ const TopicSearch = () => {
                                 <Topic close={true} onRemove={removeTagByIndex}>{topicSearch}</Topic>
                             </div>
                             <input aria-label="Input the technologies to filter projects" type="search" id="tag-search" onKeyDown={handleKeyDown} 
-                            className=" bg-gradient-to-l from-white h-12 pl-3 lowercase outline-none flex-grow flex-shrink-0 overflow-clip basis-32 rounded-full"
+                            className="bg-transparent h-12 pl-3 lowercase outline-none flex-grow flex-shrink-0 overflow-clip basis-32 rounded-full"
                             maxLength="23"
                             autoComplete="off"
                             placeholder="Search Tags" required/>                                
