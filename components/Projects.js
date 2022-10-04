@@ -27,7 +27,7 @@ const Projects = (props) => {
         <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
             {
                 props.children.map((data, index) => {
-                    return <article id={data.id} key={data.id} className="rounded-lg border border-border-gray dark:border-border-dark-grey">
+                    return <article id={data.id} key={data.id} className="rounded-lg border border-border-gray dark:border-project-dark-border">
                         <header className='group relative'>
                             <figure aria-hidden="true" className="overflow-hidden cursor-pointer" 
                             onClick={() => {setModalData(data); handleOnOpen();} }>
