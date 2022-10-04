@@ -42,10 +42,10 @@ const Modal = ({visible, onClose, modalData}) => {
                         <Topic close={false}>{modalData.topics}</Topic>
                     </div>
                     <div className="my-1 text-gray-900">
-                        <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm dark:text-white-dark" target="_blank" href={modalData.html_url}>
+                        <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm dark:text-white-dark dark:hover:bg-button-hero-black" target="_blank" href={modalData.html_url}>
                             <GitHubIcon  width={15} height={15} className="text-neutral-700 dark:text-white-dark fill-current"/> <span className="ml-1">GitHub</span>
                         </a>
-                        <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm dark:text-white-dark" target="_blank" href={`${modalData.html_url}/fork`}>
+                        <a className="inline-flex items-center rounded-full p-2 mx-2 hover:bg-gray-600 hover:bg-opacity-[0.15] text-sm dark:text-white-dark dark:hover:bg-button-hero-black" target="_blank" href={`${modalData.html_url}/fork`}>
                             <GitHubForkIcon  width={15} height={15} className="text-neutral-700 dark:text-white-dark"/> <span className="ml-1">Fork</span>
                         </a>
                     </div>
