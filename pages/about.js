@@ -2,10 +2,13 @@ import Hero from '../components/Hero';
 import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import configData from '../lib/config.json'
-import { getUserDetails, getReposByTopics} from '../lib/github-api';
+import {getUserDetails} from "../lib/github-api";
 import HeadComponent from '../components/HeadComponent';
+import ReactMarkdown from 'react-markdown';
+import LinkRenderer from '../components/LinkRender';
 
 function About(props){
+    const aboutMd = props.user.bio;
     return(
         <div className='font-roboto'>
             <HeadComponent 
@@ -24,10 +27,12 @@ function About(props){
                     <div id="about" className="flex mx-4 space-x-4">
                         <img className="w-28 h-28 rounded-full mr-2" src={props.user.avatar_url} alt="Photo"></img>
                         <div className="pt-2 max-w-md">
-                            {props.user.bio}
+                            <ReactMarkdown>
+                                {aboutMd}
+                            </ReactMarkdown>
                             <div className="mt-3">
-                                <a href={`${configData.LINKEDIN_URL}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800 dark:text-sky-500 dark:hover:text-sky-400">linkedin</a>
-                                <a href={`${props.user.html_url}`}  target="_blank" className="mr-4 text-sky-700 hover:text-blue-800 dark:text-sky-500 dark:hover:text-sky-400">github</a>
+                                <LinkRenderer href={`${configData.LINKEDIN_URL}`} className="mr-4">linkedin</LinkRenderer>
+                                <LinkRenderer href={`${props.user.html_url}`} className="mr-4">github</LinkRenderer>
                             </div>
                         </div>
                     </div>
