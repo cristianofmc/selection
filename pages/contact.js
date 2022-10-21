@@ -3,11 +3,17 @@ import HeadComponent from '../components/HeadComponent';
 import Hero from '../components/Hero';
 import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
-import configData from '../lib/config.json'
-import { getUserDetails, getReposByTopics} from '../lib/github-api';
-
+import { getUserDetails} from '../lib/github-api';
+import ReactMarkdown from 'react-markdown';
+import configData from '../lib/config.json';
+import LinkRenderer from '../components/LinkRender';
 
 function Contact(props){
+
+    const contactMd = `Let me help you **innovate**, **produce better**, or have a **good conversation**! 
+    Please, contact me via [linkedin](${configData.LINKEDIN_URL}). 
+    I will answer you as soon as possible. 😀`
+
     return(
         <div className='font-roboto'>
             <HeadComponent 
@@ -25,13 +31,10 @@ function Contact(props){
                 <div className='grid justify-items-center pt-3'>
                     <div id="contact" className="flex mx-4 space-x-4">
                         <div className="pt-2 max-w-md">
-                            Let me help you <b>innovate</b>, <b>produce better</b>, or have a <b>good conversation</b>! 
-                            Please, contact me via 
-                            <a href={`${configData.LINKEDIN_URL}`} target="_blank" className="text-sky-700 hover:text-blue-800 dark:text-sky-500 dark:hover:text-sky-400">
-                                {' <'}<span className='px-0.5'>linkedin</span>{'>'}
-                            </a>.
-                            I will answer you as soon as possible. 😀
-                        </div>
+                        <ReactMarkdown components={{ a: LinkRenderer }}>
+                            {contactMd}
+                        </ReactMarkdown>
+                        </div> 
                     </div>
                 </div>
             </section>
