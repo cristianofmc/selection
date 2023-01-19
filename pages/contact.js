@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import HeadComponent from '../components/HeadComponent';
 import Hero from '../components/Hero';
@@ -51,6 +52,15 @@ export async function getStaticProps(){
         },
         revalidate: 1
     }
+=======
+import Link from 'next/link';
+
+function Contact(){
+    return <div>
+        <h1 className='text-gray-600'>Selections - teste</h1>
+        <Link href="/"><a>Home</a></Link>
+    </div>
+>>>>>>> 6440abe88db2baa127613857e6bdc16677805c7d
 }
 
 export default Contact
