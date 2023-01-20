@@ -1,4 +1,8 @@
 File: favicon.ico 
 by: Daniel Bruce
+<<<<<<< HEAD
 LIcense: Creative Commons
 download: iconscout.com/icon/briefcase-401 [2022-03-05 16:34(GTM-3)]
+=======
+download: iconscout.com/icon/briefcase-401 [2022-03-05 16:34(GTM-3)]
+>>>>>>> 6440abe88db2baa127613857e6bdc16677805c7d

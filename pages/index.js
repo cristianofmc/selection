@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { getUserDetails, getReposDetails, filterReposByTopics,} from "../lib/github-api";
 import Hero from "../components/Hero";
 import Menu from "../components/Menu";
@@ -29,6 +30,23 @@ function Home(props) {
         </Menu>
         <div className="mt-11">
           <TopicSearch/>
+=======
+import Link from 'next/link';
+import Head from 'next/head';
+import Hero from '../components/Hero';
+import { getUserDetails, getReposByTopics} from '../lib/github-api';
+
+function Home(props){
+    return(
+        <div>
+            <Head><title>Cristiano Felipe</title></Head>
+            <Hero></Hero>
+            <div>
+                {props.repos.map((data) => {
+                    return <p className='text-center'>{data.name}</p>
+                })}
+            </div>
+>>>>>>> 6440abe88db2baa127613857e6bdc16677805c7d
         </div>
         <section className="mt-4">
           <Projects>{filteredRepos}</Projects>
@@ -38,9 +56,15 @@ function Home(props) {
   );
 }
 
+<<<<<<< HEAD
 export async function getStaticProps() {
   const userDetails = await getUserDetails();
   const reposDetails = await getReposDetails();
+=======
+export async function getStaticProps(){
+    const userDetails = await getUserDetails()
+    const reposDetails = await getReposByTopics()
+>>>>>>> 6440abe88db2baa127613857e6bdc16677805c7d
 
   return {
     props: {
