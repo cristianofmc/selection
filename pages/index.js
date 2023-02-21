@@ -1,7 +1,6 @@
 import { getUserDetails, getReposDetails, filterReposByTopics,} from "../lib/github-api";
 import Hero from "../components/Hero";
 import Menu from "../components/Menu";
-import MenuItem from "../components/MenuItem";
 import Projects from "../components/Projects";
 import TopicSearch from "../components/TopicSearch";
 import { useState } from "react";
@@ -12,6 +11,11 @@ function Home(props) {
   const [topicSearch, setTopicSearch] = useState([]);
 
   const filteredRepos = filterReposByTopics(props.repos, topicSearch);
+  const menuItems = [
+    { name: 'Projects', href: ''},
+    { name: 'About', href: 'about'},
+    { name: 'Contact', href: 'contact'}
+  ]
 
   return (
     <TopicContext.Provider value={[topicSearch, setTopicSearch]}>
@@ -22,11 +26,7 @@ function Home(props) {
       </HeadComponent>
       <div className="max-w-7xl mx-auto sm:px-6 md:px-8 pb-4 font-roboto">
         <Hero>{props.user.name}</Hero>
-        <Menu>
-          <MenuItem href="">Projects</MenuItem>
-          <MenuItem href="about">About</MenuItem>
-          <MenuItem href="contact">Contact</MenuItem>
-        </Menu>
+        <Menu items={menuItems}/>
         <div className="mt-11">
           <TopicSearch/>
         </div>

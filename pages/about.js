@@ -9,6 +9,13 @@ import LinkRenderer from '../components/LinkRender';
 
 function About(props){
     const aboutMd = props.user.bio;
+    
+    const menuItems = [
+        { name: 'Projects', href: ''},
+        { name: 'About', href: 'about'},
+        { name: 'Contact', href: 'contact'}
+    ]
+
     return(
         <div className='font-roboto'>
             <HeadComponent 
@@ -17,11 +24,7 @@ function About(props){
                 title='About'>
             </HeadComponent>
             <Hero>{props.user.name}</Hero>
-            <Menu>
-                <MenuItem href="">Projects</MenuItem>
-                <MenuItem href="about">About</MenuItem>
-                <MenuItem href="contact">Contact</MenuItem>
-            </Menu>
+            <Menu items={menuItems}/>
             <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
                 <div className='grid justify-items-center pt-3'>
                     <div id="about" className="flex mx-4 space-x-4">

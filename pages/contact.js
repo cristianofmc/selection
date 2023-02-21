@@ -13,7 +13,12 @@ function Contact(props){
     const contactMd = `Let me help you **innovate**, **produce better**, or have a **good conversation**! 
     Please, contact me via [linkedin](${configData.LINKEDIN_URL}). 
     I will answer you as soon as possible. 😀`
-
+    
+    const menuItems = [
+        { name: 'Projects', href: ''},
+        { name: 'About', href: 'about'},
+        { name: 'Contact', href: 'contact'}
+    ]
     return(
         <div className='font-roboto'>
             <HeadComponent 
@@ -22,11 +27,7 @@ function Contact(props){
                 title='Contact'>
             </HeadComponent>
             <Hero>{props.user.name}</Hero>
-            <Menu>
-                <MenuItem href="">Projects</MenuItem>
-                <MenuItem href="about">About</MenuItem>
-                <MenuItem href="contact">Contact</MenuItem>
-            </Menu>
+            <Menu items={menuItems}/>
             <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
                 <div className='grid justify-items-center pt-3'>
                     <div id="contact" className="flex mx-4 space-x-4">
