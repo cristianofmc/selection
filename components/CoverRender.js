@@ -6,9 +6,11 @@ const CoverRender = (props) => {
     cover_url += `/${props.children.default_branch}/_docs/cover.webp`;
 
     return (
-        <div className={'overflow-hidden'}>
-            <Image alt="" className="relative w-full object-cover rounded-t-md"  src={cover_url} width={props.width} height={props.height}></Image>
-        </div>
+        <Image 
+        alt="" 
+        className="relative w-full object-cover rounded-t-md"  
+        src={cover_url} 
+        width={props.width} height={props.height}></Image>
     );
 };
 

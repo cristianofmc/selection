@@ -16,8 +16,8 @@ const Modal = ({visible, onClose, modalData}) => {
 
     return(
         <FocusTrap focusTrapOptions={{onDeactivate: onClose, initialFocus: false}} >
-            <div id='projectModal' onClick={handleOnClose} className="bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center">
-                <div className="bg-white mx-2 rounded-lg border border-zinc-500 max-w-xl dark:border-border-dark-grey dark:bg-dark-black">
+            <div id='projectModal' onClick={handleOnClose} className="overflow-auto max-h-full bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center">
+                <div className="overflow-auto max-h-full  bg-white mx-2 rounded-lg border border-zinc-500 max-w-xl dark:border-border-dark-grey dark:bg-dark-black">
                     <div className="group relative">
                         <div className="overflow-hidden">
                             <CoverRender width={coverSize.width} height={coverSize.height}>{modalData}</CoverRender>
