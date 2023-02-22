@@ -35,7 +35,7 @@ const Projects = (props) => {
                             </figure>
 
                             <div className="absolute top-2 right-2 z-10 -ml-8 flex">
-                                <a href="##" type="button" 
+                                <a href="#" type="button" 
                                 className="rounded-full  p-px text-white bg-gray-900 bg-opacity-[.05]
                                 hover:bg-gray-900 hover:bg-opacity-10 
                                 focus:outline-none 
