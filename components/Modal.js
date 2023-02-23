@@ -17,13 +17,13 @@ const Modal = ({visible, onClose, modalData}) => {
     return(
         <FocusTrap focusTrapOptions={{onDeactivate: onClose, initialFocus: false}} >
             <div id='projectModal' onClick={handleOnClose} className="overflow-auto max-h-full bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center">
-                <div className="overflow-auto max-h-full  bg-white mx-2 rounded-lg border border-zinc-500 max-w-xl dark:border-border-dark-grey dark:bg-dark-black">
+                <div className="overflow-auto max-h-full  bg-white mx-2 rounded-lg border border-zinc-500 max-w-md md:max-w-xl dark:border-border-dark-grey dark:bg-dark-black">
                     <div className="group relative">
                         <div className="overflow-hidden">
                             <CoverRender width={coverSize.width} height={coverSize.height}>{modalData}</CoverRender>
                         </div>
                         <div className="absolute top-3 right-3 z-10 -ml-8 flex pt-1 pr-1 ">
-                            <a href="##" type="button" 
+                            <a href="#" type="button" 
                             className="rounded-full  p-0.5 text-white bg-gray-900 bg-opacity-[.03]
                              hover:bg-gray-900 hover:bg-opacity-10 
                              focus:outline-none 
