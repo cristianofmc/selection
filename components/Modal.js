@@ -14,6 +14,8 @@ const Modal = ({visible, onClose, modalData}) => {
         if (e.target.id === 'projectModal') onClose();
     };
 
+    console.log(modalData);
+
     return(
         <FocusTrap focusTrapOptions={{onDeactivate: onClose, initialFocus: false}} >
             <div id='projectModal' onClick={handleOnClose} className="overflow-auto max-h-full bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center">
