@@ -6,6 +6,7 @@ import Topic from './Topic';
 import NoResults from './NoResults';
 import SeeDetailsIcon from './Icons/SeeDetailsIcon';
 
+
 const Projects = (props) => {
 
     const [modalOn, setModalOn] = useState(false);
@@ -35,15 +36,16 @@ const Projects = (props) => {
                             </figure>
 
                             <div className="absolute top-2 right-2 z-10 -ml-8 flex">
-                                <Link href="#" type="button" 
+                            <button
+                                type="button"
                                 className="rounded-full  p-px text-white bg-gray-900 bg-opacity-[.05]
-                                hover:bg-gray-900 hover:bg-opacity-10 
-                                focus:outline-none 
-                                focus-visible:ring-2 focus-visible:ring-black"
-                                onClick={() => {setModalData(data); handleOnOpen();} }>
-                                    <span className="sr-only">See details</span>
-                                    <SeeDetailsIcon aria-hidden="true" width={30} height={30} className="text-white fill-current"/>
-                                </Link>
+                                    hover:bg-gray-900 hover:bg-opacity-10 
+                                    focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                                onClick={() => { setModalData(data); handleOnOpen(); }}
+                                >
+                                <span className="sr-only">See details</span>
+                                <SeeDetailsIcon aria-hidden="true" width={30} height={30} className="text-white fill-current"/>
+                            </button>
                             </div>
 
                             <div className="px-4 pt-3">

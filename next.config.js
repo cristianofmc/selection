@@ -1,10 +1,9 @@
 module.exports = {
   images: {
-    domains: ['raw.githubusercontent.com'],
+    domains: ['avatars.githubusercontent.com', 'raw.githubusercontent.com'],
   },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
   },
-}
-
+};
