@@ -9,7 +9,7 @@ import HeadComponent from "../components/HeadComponent";
 
 function Home(props) {
   const [topicSearch, setTopicSearch] = useState([]);
-
+  console.log(props);
   const filteredRepos = filterReposByTopics(props.repos, topicSearch);
   const menuItems = [
     { name: 'Projects', href: ''},
