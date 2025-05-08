@@ -1,17 +1,21 @@
-import Image from 'next/image'
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
-const CoverRender = (props) => {
-    let cover_url = props.children.html_url.replace("https://github.com/", "https://raw.githubusercontent.com/");
-    cover_url += `/${props.children.default_branch}/_docs/cover.webp`;
+const CoverRender = ({ children, width, height }) => {
+  if (!children?.html_url || !children?.default_branch) return null;
 
-    return (
-        <Image 
-        alt="" 
-        className="relative w-full object-cover rounded-t-md"  
-        src={cover_url} 
-        width={props.width} height={props.height}></Image>
-    );
+  const cover_url = children.html_url
+    .replace("https://github.com/", "https://raw.githubusercontent.com/")
+    + `/${children.default_branch}/_docs/cover.webp`;
+
+  return (
+    <Image
+      src={cover_url}
+      alt="Project cover image"
+      width={width}
+      height={height}
+      className="w-full object-cover rounded-t-md"
+    />
+  );
 };
 
 export default CoverRender;
