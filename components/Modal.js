@@ -11,32 +11,33 @@ import FocusTrap from 'focus-trap-react';
 const Modal = ({ visible, onClose, modalData }) => {
   const coverSize = { width: '672', height: '342' };
 
-  if (!visible) return null;
-
-  const handleOnClose = (e) => {
-    if (e.target.id === 'projectModal') onClose();
-  };
-
   useEffect(() => {
     if (visible) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
     }
-
     return () => {
       document.body.style.overflow = '';
     };
   }, [visible]);
 
   return (
-    <FocusTrap focusTrapOptions={{ onDeactivate: onClose, initialFocus: false }}>
+    <FocusTrap
+    focusTrapOptions={{
+      
+      clickOutsideDeactivates: true,
+      initialFocus: false,
+    }}
+    >
       <div
         id="projectModal"
-        onClick={handleOnClose}
+        onClick={onClose} 
         className="overflow-auto max-h-full bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center"
       >
-        <div className="overflow-auto max-h-full bg-white mx-2 rounded-lg border border-zinc-500 max-w-md md:max-w-xl dark:border-border-dark-grey dark:bg-dark-black">
+        <div
+          className="overflow-auto max-h-full bg-white mx-2 rounded-lg border border-zinc-500 max-w-md md:max-w-xl dark:border-border-dark-grey dark:bg-dark-black"
+        >
           <div className="group relative">
             <div className="overflow-hidden">
               <CoverRender width={coverSize.width} height={coverSize.height}>
@@ -47,10 +48,7 @@ const Modal = ({ visible, onClose, modalData }) => {
               <button
                 type="button"
                 onClick={onClose}
-                className="rounded-full p-0.5 text-white bg-gray-900 bg-opacity-[.03]
-                  hover:bg-gray-900 hover:bg-opacity-10 
-                  focus:outline-none 
-                  focus-visible:ring-2 focus-visible:ring-black"
+                className="rounded-full p-0.5 text-white bg-gray-900 bg-opacity-[.03] hover:bg-gray-900 hover:bg-opacity-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="sr-only">Close modal</span>
                 <CloseIcon />

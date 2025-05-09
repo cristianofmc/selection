@@ -28,7 +28,9 @@ const Projects = ({ children }) => {
         <figure
           aria-hidden="true"
           className="overflow-hidden cursor-pointer"
-          onClick={() => handleOnOpen(data)}
+          onClick={() => {
+            handleOnOpen(data);
+          }}
         >
           <CoverRender width="600" height="400">{data}</CoverRender>
         </figure>
@@ -37,7 +39,9 @@ const Projects = ({ children }) => {
           <button
             type="button"
             className="rounded-full p-px text-white bg-gray-900 bg-opacity-[.05] hover:bg-gray-900 hover:bg-opacity-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
-            onClick={() => handleOnOpen(data)}
+            onClick={() => {
+              handleOnOpen(data);
+            }}
           >
             <span className="sr-only">See details</span>
             <SeeDetailsIcon width={30} height={30} className="text-white fill-current" />
@@ -64,7 +68,9 @@ const Projects = ({ children }) => {
   return (
     <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
       {children.map(renderProject)}
-      <Modal onClose={handleOnClose} visible={modalOn} modalData={modalData} />
+      {modalOn && modalData && (
+        <Modal onClose={handleOnClose} visible={modalOn} modalData={modalData} />
+      )}
     </div>
   );
 };
