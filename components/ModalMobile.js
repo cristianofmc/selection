@@ -8,7 +8,7 @@ import GitHubForkIcon from './Icons/GitHubForkIcon';
 import GitHubIcon from './Icons/GitHubIcon';
 import FocusTrap from 'focus-trap-react';
 
-const Modal = ({ visible, onClose, modalData }) => {
+const ModalMobile = ({ visible, onClose, modalData }) => {
   const coverSize = { width: '672', height: '342' };
 
   useEffect(() => {
@@ -107,4 +107,4 @@ const Modal = ({ visible, onClose, modalData }) => {
   );
 };
 
-export default Modal;
+export default ModalMobile;

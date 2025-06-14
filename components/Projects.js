@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import CoverRender from './CoverRender';
-import Modal from './Modal';
+import ModalMobile from './ModalMobile';
 import Topic from './Topic';
 import NoResults from './NoResults';
 import SeeDetailsIcon from './Icons/SeeDetailsIcon';
@@ -66,10 +66,10 @@ const Projects = ({ children }) => {
   );
 
   return (
-    <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
+    <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
       {children.map(renderProject)}
       {modalOn && modalData && (
-        <Modal onClose={handleOnClose} visible={modalOn} modalData={modalData} />
+        <ModalMobile onClose={handleOnClose} visible={modalOn} modalData={modalData} />
       )}
     </div>
   );

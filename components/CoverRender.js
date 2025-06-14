@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const CoverRender = ({ children, width, height }) => {
+const CoverRender = ({ children, width, height, roundedTop = true }) => {
   if (!children?.html_url || !children?.default_branch) return null;
 
   const cover_url = children.html_url
@@ -13,7 +13,7 @@ const CoverRender = ({ children, width, height }) => {
       alt="Project cover image"
       width={width}
       height={height}
-      className="w-full object-cover rounded-t-md"
+      className={`w-full object-cover ${roundedTop ? 'rounded-t-md' : ''}`}
     />
   );
 };
