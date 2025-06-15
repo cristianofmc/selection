@@ -25,7 +25,7 @@ const ModalMobile = ({ visible, onClose, modalData }) => {
       document.documentElement.style.overflow = '';
     };
   }, [visible]);
-  
+
 useEffect(() => {
   const handlePopState = () => {
     if (visible) {
@@ -69,10 +69,10 @@ return () => {
     <button
       type="button"
       onClick={onClose}
-      className="rounded-full p-0.5 text-white bg-gray-900 bg-opacity-[.03] hover:bg-opacity-10"
+      className="rounded-full p-0.5"
     >
-      <div className="pl-3 pr-3">
-        <ArrowBackIcon />
+      <div className="pl-3 pr-3 dark:text-white-dark text-neutral-700 fill-current">
+        <ArrowBackIcon/>
       </div>
     </button>
 
