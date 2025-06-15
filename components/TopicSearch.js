@@ -54,7 +54,7 @@ const TopicSearch = () => {
                             id="tag-search" 
                             ref={inputRef}
                             onKeyDown={handleKeyDown} 
-                            className="bg-transparent h-12 pl-3 lowercase outline-none flex-grow flex-shrink-0 overflow-clip basis-32 rounded-full"
+                            className="bg-transparent h-12 pl-3 lowercase outline-none flex-grow flex-shrink-0 overflow-clip basis-32 rounded-full dark:text-white-dark"
                             maxLength="23"
                             autoComplete="off"
                             placeholder="Search Tags" 
