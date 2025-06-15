@@ -1,10 +1,14 @@
 module.exports = {
   images: {
-    domains: ['raw.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+      },
+    ],
   },
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-}
-
+};
