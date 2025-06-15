@@ -28,13 +28,14 @@ export default async function AboutPage() {
       <Menu items={menuItems} />
       <section className="mt-16 max-w-7xl mx-auto sm:px-6 md:px-8">
         <div className="grid justify-items-center pt-3">
-          <div id="about" className="flex mx-4 space-x-4">
+          <div id="about" className="flex flex-col sm:flex-row items-center sm:items-start mx-4 space-y-4 sm:space-y-0 sm:space-x-4">
+
             <Image
                 src={user.avatar_url}
                 alt="Photo"
                 width={112}
                 height={112}
-                className="rounded-full mr-2"
+                className="rounded-full mr-2 object-cover"
             />
 
             <div className="pt-2 max-w-md">
