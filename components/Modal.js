@@ -7,6 +7,7 @@ import CloseIcon from './Icons/CloseIcon';
 import GitHubForkIcon from './Icons/GitHubForkIcon';
 import GitHubIcon from './Icons/GitHubIcon';
 import FocusTrap from 'focus-trap-react';
+import ContentRender from './ContentRender';
 
 const Modal = ({ visible, onClose, modalData }) => {
   const coverSize = { width: '672', height: '342' };
@@ -37,7 +38,7 @@ const Modal = ({ visible, onClose, modalData }) => {
       <div
         id="projectModal"
         onClick={onClose} 
-        className="overflow-auto max-h-full bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center"
+        className="overflow-auto max-h-full bg-zinc-900 bg-opacity-50 fixed inset-0 z-50 flex justify-center items-center pt-9 pb-5"
       >
         <div
           onClick={(e) => e.stopPropagation()}
@@ -48,6 +49,7 @@ const Modal = ({ visible, onClose, modalData }) => {
             sm:rounded-lg sm:border sm:border-zinc-500
             sm:max-w-md md:max-w-xl sm:mx-2
             dark:sm:border-border-dark-grey
+            rounded-scrollbar
           "
         >
 
@@ -68,12 +70,7 @@ const Modal = ({ visible, onClose, modalData }) => {
               </button>
             </div>
             <div className="px-4">
-              <h1 className="text-xl font-normal tracking-normal leading-7 pt-4 pb-3">
-                {modalData.name}
-              </h1>
-              <p className="text-base font-normal tracking-normal leading-6 pt-1 pb-3">
-                {modalData.description}
-              </p>
+              <ContentRender repo={modalData}/>
             </div>
           </div>
 

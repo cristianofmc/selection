@@ -34,3 +34,20 @@ html {
   scrollbar-gutter: stable;
   overflow-y: auto;
 }
+
+.rounded-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.rounded-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.rounded-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.rounded-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.5) transparent;
+}

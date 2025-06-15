@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import CoverRender from './CoverRender';
 import ModalMobile from './ModalMobile';
+import Modal from './Modal';
 import Topic from './Topic';
 import NoResults from './NoResults';
 import SeeDetailsIcon from './Icons/SeeDetailsIcon';
+import useBreakpoint from './useBreakpoint';
 
 const Projects = ({ children }) => {
   const [modalOn, setModalOn] = useState(false);
   const [modalData, setModalData] = useState(null);
-
+  const isMobile = useBreakpoint();
+  
   const handleOnOpen = (data) => {
     document.body.classList.add('overflow-y-hidden');
     setModalData(data);
@@ -69,7 +72,9 @@ const Projects = ({ children }) => {
     <div id="projects" className="py-3 mx-2 md:mx-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
       {children.map(renderProject)}
       {modalOn && modalData && (
-        <ModalMobile onClose={handleOnClose} visible={modalOn} modalData={modalData} />
+        isMobile
+          ? <ModalMobile onClose={handleOnClose} visible={modalOn} modalData={modalData} />
+          : <Modal onClose={handleOnClose} visible={modalOn} modalData={modalData} />
       )}
     </div>
   );
