@@ -4,7 +4,6 @@ import { useMemo } from 'react';
 const Topic = ({ children, close, onRemove }) => {
     const keyTag = configData.KEY_TAG;
 
-    // Usar useMemo para evitar recomputação de tagsArray a cada renderização
     const tagsArray = useMemo(() => children.filter(value => value !== keyTag), [children, keyTag]);
 
     return (

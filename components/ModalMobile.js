@@ -34,7 +34,6 @@ useEffect(() => {
   };
 
   if (visible) {
-    // Empurra um novo estado para o histórico
     window.history.pushState({ modal: true }, '');
     window.addEventListener('popstate', handlePopState);
   }
@@ -64,7 +63,6 @@ return () => {
   className="w-full h-full bg-white dark:bg-dark-black flex flex-col"
 >
 
-  {/* HEADER */}
   <div className="py-2 pr-1 flex items-center">
     <button
       type="button"
@@ -98,7 +96,6 @@ return () => {
     </div>
   </div>
 
-  {/* SCROLLABLE CONTENT */}
   <div className="overflow-auto flex-grow">
     <CoverRender width={coverSize.width} height={coverSize.height} roundedTop={false}>
       {modalData}
@@ -109,7 +106,6 @@ return () => {
     </div>
   </div>
 
-  {/* FIXED BOTTOM FOOTER */}
   <div className="pl-4 py-4 shrink-0 border-zinc-200 dark:border-zinc-800">
     <Topic close={false}>{modalData.topics}</Topic>
   </div>
